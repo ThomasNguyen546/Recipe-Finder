@@ -1,5 +1,7 @@
 header {
     background-image: url("../assets/images/header-background.png");
+    background-size: cover;
+    max-width: 100%;
     color: #36b398;
     text-align: center;
     padding: 10px 0px 0px 0px;
@@ -19,7 +21,7 @@ header {
 }
 
 .card {
-    width: 650px;
+    max-width: 650px;
     padding: 15px;
     border-color: #63dbc1;
     justify-content: center;
@@ -27,3 +29,36 @@ header {
     margin: 20px auto;
     color:  #36b398;
 }
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1300px;
+    position: relative;
+    margin: auto;
+  }
+
+img {
+    max-height: 600px;
+}
+
+/* Slideshow fade in and out */
+.fade-in {
+    animation: fadeinout 7s linear 1 forwards;
+}
+@keyframes fadeinout {
+    0% { opacity: 0;}
+    50% { opacity:1;}
+    100% { opacity: 0;}
+}
+    
+/* Caption text */
+.imageText {
+    color:white;
+    font-size: 30px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+  

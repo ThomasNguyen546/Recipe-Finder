@@ -19,9 +19,11 @@ header {
 }
 
 .card {
-    /* width: 1000px; */
+    width: 650px;
     padding: 15px;
-    border-color: red;
+    border-color: #63dbc1;
     justify-content: center;
-    margin-top: 10px;
+    background-color: #adffe5;
+    margin: 20px auto;
+    color:  #36b398;
 }

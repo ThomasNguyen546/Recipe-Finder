@@ -1,8 +1,16 @@
 header {
-    background-color: #8c03fc;
-    color: white;
+    background-image: url("../assets/images/header-background.png");
+    color: #36b398;
     text-align: center;
-    padding: 10px;
+    padding: 10px 0px 0px 0px;
+}
+
+.headerTitle {
+    padding: 50px 0px 0px 0px;
+}
+
+.headerIntro {
+    color: #30cfac;
 }
 
 #searchCard {

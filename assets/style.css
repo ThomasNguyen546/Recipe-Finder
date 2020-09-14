@@ -2,7 +2,7 @@ header {
     background-image: url("../assets/images/header-background.png");
     background-size: cover;
     max-width: 100%;
-    color: #36b398;
+    
     text-align: center;
     padding: 10px 0px 0px 0px;
 }
@@ -10,6 +10,12 @@ header {
 .headerTitle {
     font-size: 40px;
     padding: 50px 0px 0px 0px;
+    color: #36b398;
+    text-shadow:
+        -1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
 }
 
 .headerIntro {
@@ -38,6 +44,11 @@ body {
     background-image: url(../assets/images/cardbackground.png);
     background-size: cover;
     color:  white;
+    text-shadow:
+        -1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
 }
 
 /* Slideshow container */

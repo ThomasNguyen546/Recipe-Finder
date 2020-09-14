@@ -18,3 +18,11 @@
 
 ![the Recipe Roundup homepage](./assets/images/recipeRoundup.jpg)
 
+### Technologies Used
+---
+* The MealDB API
+    *  [The MealDB API](https://www.themealdb.com/api.php)
+* (the second API)
+    * (link to the second API)
+
+

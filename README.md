@@ -25,4 +25,10 @@
 * (the second API)
     * (link to the second API)
 
+### Authors
+---
+* Thomas Nguyen
+* Sophie Foutz 
+* Alexandra Walker 
+* Madelynn Moffat 
 

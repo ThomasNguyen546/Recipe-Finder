@@ -1,3 +1,4 @@
+// Javascript File for Homepage
 var userFormEl = document.getElementById("submit-btn");
 var recipeInputEl = document.getElementById("searchRecipe")
 

@@ -15,6 +15,12 @@ header {
     color: #30cfac;
 }
 
+body {
+    background-color: #d5f2eb;
+    background-image: url(..//assets/images/bodybackground2.png);
+    background-size: cover;
+}
+
 #searchCard {
     display: flex;
     text-align: center;
@@ -24,10 +30,13 @@ header {
     max-width: 650px;
     padding: 15px;
     border-color: #63dbc1;
+    border-width: 5px;
     justify-content: center;
     background-color: #adffe5;
     margin: 20px auto;
-    color:  #36b398;
+    background-image: url(../assets/images/cardbackground.png);
+    background-size: cover;
+    color:  white;
 }
 
 /* Slideshow container */
@@ -43,12 +52,12 @@ img {
 
 /* Slideshow fade in and out */
 .fade-in {
-    animation: fadeinout 7s linear 1 forwards;
+    animation: fadeinout 6s linear 1 forwards;
 }
 @keyframes fadeinout {
-    0% { opacity: 0;}
+    0% { opacity: 0.1;}
     50% { opacity:1;}
-    100% { opacity: 0;}
+    100% { opacity: 0.1;}
 }
     
 /* Caption text */
@@ -59,6 +68,6 @@ img {
     position: absolute;
     bottom: 8px;
     width: 100%;
-    text-align: center;
+    text-align: left;
 }
   

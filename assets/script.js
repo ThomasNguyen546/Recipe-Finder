@@ -39,7 +39,7 @@ var getRecipes = function(searchTerm) {
   fetch(apiUrl).then(function(response) {
     if(response.ok) {
       response.json().then(function(data) {
-        console.log(data, searchTerm);
+      console.log(data, searchTerm);
       })
     } else {
       alert("Error: " + response.statusText);

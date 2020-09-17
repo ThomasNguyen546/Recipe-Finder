@@ -26,10 +26,11 @@
                     <div class="input-group">
                         <input class="input-group-field" type="text" id="searchRecipe">
                         <div class="input-group-button">
-                            <input type="submit" class="button" value="Submit" id="submit-btn">
+                            <input type="submit" class="button" value="Submit" id="recipes-btn">
                         </div>
                     </div>
                 </div>
+                <div id="recipes-container"></div>
             </div>
         </div>
     </div>
@@ -62,7 +63,26 @@
             <img src="assets\images\dessert.jpg" style="width:100%">
             <div class="imageText">Mixed Berry Crumble Cookie Bars</div>
         </div>
-    </div>    
+    </div>  
+
+<!-- Grocery Store Search Container -->
+    <div class="grid-container" id="grocery-search">
+        <div class="row">
+            <div class="columns large-12 align-self-center">
+                <div class="card" id="searchCard">
+                    <h4>Find Nearby Grocery Stores to Shop Ingredients and Get Cooking!</h4>
+                    <div class="input-group">
+                        <input class="input-group-field" type="text" id="searchCity" placeholder="Enter ZIP Code">
+                        <div class="input-group-button">
+                            <input type="submit" class="button" value="Submit" id="stores-btn">
+                        </div>
+                    </div>
+                </div>
+                <div id="stores-container"></div>
+            </div>
+        </div>
+    </div>
+
     <script src="./assets/script.js"></script>
 </body>
 

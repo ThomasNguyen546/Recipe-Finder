@@ -1,5 +1,10 @@
-var userFormEl = document.getElementById("submit-btn");
-var recipeInputEl = document.getElementById("searchRecipe")
+var recipeBtnEl = document.getElementById("recipes-btn");
+var recipeInputEl = document.getElementById("searchRecipe");
+var storeInputEl = document.getElementById("searchCity");
+var storeContainerEl = document.getElementById("stores-container");
+var storeBtnEl = document.getElementById("stores-btn");
+var recipeContainerEl = document.getElementById("recipes-container");
+
 
 // Slideshow for Pictures 
 var slideIndex = 0;
@@ -17,37 +22,165 @@ function showSlides() {
   setTimeout(showSlides, 7000); // Change image every 5 seconds
 }
 
-var formSubmitHandler = function(event) {
+// Recipe Search Form Handler
+var recipesSubmitHandler = function(event) {
   event.preventDefault();
-    // get value from input element & send it to getRecipes()
+    
     var searchTerm = recipeInputEl.value.trim();
     
     if (searchTerm) {
         getRecipes(searchTerm);
-        // clear the input element
+        
         recipeInputEl.value = "";
     } else {
         alert("Please enter a valid search term.");
     }
 };
 
+// Get Recipes from Edamam API
 var getRecipes = function(searchTerm) {
-  // format the mealsdb api url
-  var apiUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + searchTerm;
+
+  var apiUrl = "https://api.edamam.com/search?q=" + searchTerm + "&app_id=b00f114c&app_key=00174a765fb378e74adaddd1216c4fa7";
   
-  // make a request to the url
+  
   fetch(apiUrl).then(function(response) {
     if(response.ok) {
       response.json().then(function(data) {
-      console.log(data, searchTerm);
+        localStorage.setItem("recipes", JSON.stringify(data.hits));
+        displayRecipes();
       })
     } else {
       alert("Error: " + response.statusText);
     }
   })
   .catch(function(error) {
-    alert("Unable to connect to Github");
+    alert("Unable to connect to Edamam");
   });
 };
 
-userFormEl.addEventListener("click", formSubmitHandler);
+// Display Recipes 
+var displayRecipes = function () {
+  var recipes = JSON.parse(localStorage.getItem("recipes") );
+
+  document.querySelector(".slideshow-container").style.display='none';
+ 
+// loop through returned recipe objects
+  for (var i = 0; i < recipes.length; i++) {
+
+    var recipeName = recipes[i].recipe.label;
+    var recipeSrc = recipes[i].recipe.url;
+    var ingredients = recipes[i].recipe.ingredientLines
+    var healthLabels = recipes[i].recipe.healthLabels;
+
+    // create recipe card element
+    var recipeEl = document.createElement("div");
+    recipeEl.classList = "card recipe-card";
+
+    // create recipe title element
+    var nameEl= document.createElement("h4");
+    nameEl.innerHTML = recipeName;
+
+    // create recipe Image element
+    var recipeImg = document.createElement("img");
+    recipeImg.classList = "recipe-img"
+    recipeImg.src = recipes[i].recipe.image;
+
+    // create "view full recipe" link
+    var linkEl = document.createElement("a");
+    var link = document.createTextNode("View Full Recipe");
+
+    linkEl.append(link);
+
+    linkEl.title = "View Full Recipe";
+    linkEl.href = recipeSrc;
+
+    // create Ingredients element
+    var ingredientEl = document.createElement("p");
+    ingredientEl.innerHTML = "Ingredients: " + ingredients;
+
+    // create Health Labels element
+    var healthLabelEl = document.createElement("p");
+    healthLabelEl.innerHTML = "**" + healthLabels;
+  
+    // append all inner elements to recipe card
+    recipeEl.append(nameEl, recipeImg, ingredientEl, healthLabelEl, linkEl);
+
+    // append recipe card to document body
+    recipeContainerEl.append(recipeEl);
+  }
+}
+
+// Grocery Store Search Form Handler
+var storesSubmitHandler = function() {
+  event.preventDefault();
+
+    
+    var searchTerm = storeInputEl.value.trim();
+    
+    if (searchTerm) {
+        getStores(searchTerm);
+        
+        storeInputEl.value = "";
+    } else {
+        alert("Please enter a valid ZIP code");
+    }
+};
+
+// Get Nearby Grocery Stores from Google Places API
+var getStores = function(searchTerm) {
+
+  var apiUrl = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=groceries%20in%20" + searchTerm + "&key=AIzaSyBFL3Y0p-FOo0Az0uRVoBW8QvtNAohWFCk";
+  
+  
+  fetch(apiUrl).then(function(response) {
+    if(response.ok) {
+      response.json().then(function(stores) {
+      localStorage.setItem("stores", JSON.stringify(stores.results));
+      displayStores();
+      }) 
+      } else {
+        alert("Error: " + response.statusText);
+      }
+    })
+    .catch(function(error) {
+      alert("Unable to connect to Edamam");
+    });
+  };
+
+// Display Nearby Grocery Stores
+var displayStores = function () {
+  var stores = JSON.parse(localStorage.getItem("stores") );
+   
+  storeContainerEl.textContent = "";
+  
+
+  for (var i = 0; i < 5; i++) {
+      
+      var storeName = stores[i].name;
+      var storeAddress = stores[i].formatted_address;
+
+      // create store container element
+      var storeEl = document.createElement("div");
+      storeEl.classList = "list-item";
+
+      // Create Store Title element
+      var nameEl = document.createElement("h4");
+      nameEl.innerHTML = storeName;
+
+      // create store address element
+      var addressEl = document.createElement("p");
+      addressEl.innerHTML = storeAddress;
+
+      // append store info elements to store container element
+      storeEl.append(nameEl, addressEl);
+
+      // append store container elements to document body
+      storeContainerEl.append(storeEl);
+  }
+};
+
+
+
+
+storeBtnEl.addEventListener("click", storesSubmitHandler)
+recipeBtnEl.addEventListener("click", recipesSubmitHandler);

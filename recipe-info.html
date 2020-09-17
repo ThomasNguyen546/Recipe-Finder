@@ -29,14 +29,13 @@
             <div class="columns large-12 align-self-center">
                 <div class="card" id="searchCard">
                     <h2>Search For a Recipe:</h2>
-                    <div class="input-group">
-                        <input class="input-group-field" type="text" id="searchRecipe" placeholder="Enter Recipe">
+                    <form class="input-group" id="recipe-form">
+                        <input class="input-group-field" type="text" id="searchRecipe">
                         <!-- Have to delete the submit-btn id for it to jump to second page, but I left it here just in case -->
-                        
-                        <div class="input-group-button">
-                            <input type="submit" class="button" value="Submit" id="recipes-btn">
-                        </div>
-                    </div>
+                        <button class="button input-group-button" value="Submit" id="recipes-btn" type="submit">
+                            Submit
+                        </button>
+                    </form>
                 </div>
                 <div id="recipe-container"></div>
             </div>

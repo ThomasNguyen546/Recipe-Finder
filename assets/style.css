@@ -37,7 +37,7 @@ body {
     max-width: 650px;
     padding: 15px;
     border-color: #63dbc1;
-    border-width: 5px;
+    border-width: 2px;
     justify-content: center;
     background-color: #adffe5;
     margin: 20px auto;
@@ -84,15 +84,22 @@ img {
 }
 
 .btn-back {
-background-color:#adffe5;
-border-radius: 10px;
-border-width: 10px;
-border-color: #adffe5;
-color: #36b398;
-padding: 15px 32px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
-text-decoration: none;
+    background-color:#adffe5;
+    border-radius: 10px;
+    border-width: 5px;
+    border-color: #adffe5;
+    color: #36b398;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.initial-btn {
+    margin: auto;
+    border-color:#1d9191;
+    border-width: 2px;
+    background-color:#21b0b0;
 }

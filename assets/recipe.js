@@ -1,9 +1,9 @@
 // Javascript File for Recipe HTML
-var recipeBtnEl = document.getElementById("recipes-btn");
+var recipeBtnEl = document.getElementById("recipe-form");
 var recipeInputEl = document.getElementById("searchRecipe");
 var storeInputEl = document.getElementById("searchCity");
 var storeContainerEl = document.getElementById("stores-container");
-var storeBtnEl = document.getElementById("stores-btn");
+var storeBtnEl = document.getElementById("store-form");
 var recipeContainerEl = document.getElementById("recipe-container");
 
 // Recipe Search Form Handler
@@ -180,8 +180,8 @@ var displayStores = function () {
 
 
 
-storeBtnEl.addEventListener("click", storesSubmitHandler)
-recipeBtnEl.addEventListener("click", recipesSubmitHandler);
+storeBtnEl.addEventListener("submit", storesSubmitHandler)
+recipeBtnEl.addEventListener("submit", recipesSubmitHandler);
 
 // Get the modal
 var modal = document.getElementById("myModal");

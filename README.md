@@ -20,8 +20,8 @@
 
 ### Technologies Used
 ---
-* The MealDB API
-    *  [The MealDB API](https://www.themealdb.com/api.php)
+* Google Places
+    *  [Google Places API](https://developers.google.com/places/web-service/overview)
 * The Edamam API
     * [The Edamam API](https://developer.edamam.com/)
 

@@ -22,8 +22,8 @@
 ---
 * The MealDB API
     *  [The MealDB API](https://www.themealdb.com/api.php)
-* (the second API)
-    * (link to the second API)
+* The Edamam API
+    * [The Edamam API](https://developer.edamam.com/)
 
 ### Authors
 ---

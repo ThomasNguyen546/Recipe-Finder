@@ -1,9 +1,9 @@
 // Javascript File for Recipe HTML
-var recipeBtnEl = document.getElementById("recipes-btn");
+var recipeBtnEl = document.getElementById("recipe-form");
 var recipeInputEl = document.getElementById("searchRecipe");
 var storeInputEl = document.getElementById("searchCity");
 var storeContainerEl = document.getElementById("stores-container");
-var storeBtnEl = document.getElementById("stores-btn");
+var storeBtnEl = document.getElementById("store-form");
 var recipeContainerEl = document.getElementById("recipe-container");
 
 // Recipe Search Form Handler
@@ -90,11 +90,11 @@ var displayRecipes = function () {
     // create Ingredients element
     var ingredientEl = document.createElement("p");
     ingredientEl.classList = "recipe-ingredients";
-    ingredientEl.innerHTML = "Ingredients: " + ingredients;
+    ingredientEl.innerHTML = 'Ingredients: ' + '<ul><li>' + ingredients.join("</li><li>"); + '</li></ul>';
 
     // create Health Labels element
     var healthLabelEl = document.createElement("p");
-    ingredientEl.classList = "recipe-health";
+    healthLabelEl.classList = "recipe-health";
     healthLabelEl.innerHTML = "**" + healthLabels;
   
     // append all inner elements to recipe card
@@ -180,8 +180,8 @@ var displayStores = function () {
 
 
 
-storeBtnEl.addEventListener("click", storesSubmitHandler)
-recipeBtnEl.addEventListener("click", recipesSubmitHandler);
+storeBtnEl.addEventListener("submit", storesSubmitHandler)
+recipeBtnEl.addEventListener("submit", recipesSubmitHandler);
 
 // Get the modal
 var modal = document.getElementById("myModal");

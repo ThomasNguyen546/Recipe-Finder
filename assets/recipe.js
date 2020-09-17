@@ -4,7 +4,7 @@ var recipeInputEl = document.getElementById("searchRecipe");
 var storeInputEl = document.getElementById("searchCity");
 var storeContainerEl = document.getElementById("stores-container");
 var storeBtnEl = document.getElementById("stores-btn");
-var recipeContainerEl = document.getElementById("recipes-container");
+var recipeContainerEl = document.getElementById("recipe-container");
 
 // Recipe Search Form Handler
 var recipesSubmitHandler = function(event) {
@@ -62,15 +62,17 @@ var displayRecipes = function () {
 
     // create recipe title element
     var nameEl= document.createElement("h4");
+    nameEl.classList = "recipe-title";
     nameEl.innerHTML = recipeName;
 
     // create recipe Image element
     var recipeImg = document.createElement("img");
-    recipeImg.classList = "recipe-img"
+    recipeImg.classList = "recipe-image"
     recipeImg.src = recipes[i].recipe.image;
 
     // create "view full recipe" link
     var linkEl = document.createElement("a");
+    linkEl.classList = "recipe-link";
     var link = document.createTextNode("View Full Recipe");
 
     linkEl.append(link);
@@ -80,10 +82,12 @@ var displayRecipes = function () {
 
     // create Ingredients element
     var ingredientEl = document.createElement("p");
+    ingredientEl.classList = "recipe-ingredients";
     ingredientEl.innerHTML = "Ingredients: " + ingredients;
 
     // create Health Labels element
     var healthLabelEl = document.createElement("p");
+    ingredientEl.classList = "recipe-health";
     healthLabelEl.innerHTML = "**" + healthLabels;
   
     // append all inner elements to recipe card
@@ -145,7 +149,7 @@ var displayStores = function () {
 
       // create store container element
       var storeEl = document.createElement("div");
-      storeEl.classList = "list-item";
+      storeEl.classList = "store-info list-item";
 
       // Create Store Title element
       var nameEl = document.createElement("h4");

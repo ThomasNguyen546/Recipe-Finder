@@ -105,15 +105,14 @@ img {
     background-color:#21b0b0;
 }
 
-<<<<<<< HEAD
-.recipe-img {
+.recipe-image{
     width: 20vw;
 }
 
 .recipe-card {
     background-image: none;
-=======
+}
+
 .recipe-title {
     text-align: center;
->>>>>>> a645e016c649682aa23790e44dd03b947444868f
 }

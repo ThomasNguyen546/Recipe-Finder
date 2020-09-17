@@ -1,26 +1,10 @@
+// Javascript File for Recipe HTML
 var recipeBtnEl = document.getElementById("recipes-btn");
 var recipeInputEl = document.getElementById("searchRecipe");
 var storeInputEl = document.getElementById("searchCity");
 var storeContainerEl = document.getElementById("stores-container");
 var storeBtnEl = document.getElementById("stores-btn");
 var recipeContainerEl = document.getElementById("recipes-container");
-
-
-// Slideshow for Pictures 
-var slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 7000); // Change image every 5 seconds
-}
 
 // Recipe Search Form Handler
 var recipesSubmitHandler = function(event) {
@@ -47,6 +31,8 @@ var getRecipes = function(searchTerm) {
     if(response.ok) {
       response.json().then(function(data) {
         localStorage.setItem("recipes", JSON.stringify(data.hits));
+        var resultsTerm = document.getElementById("search-term");
+        resultsTerm.innerHTML = searchTerm;
         displayRecipes();
       })
     } else {
@@ -61,8 +47,6 @@ var getRecipes = function(searchTerm) {
 // Display Recipes 
 var displayRecipes = function () {
   var recipes = JSON.parse(localStorage.getItem("recipes") );
-
-  document.querySelector(".slideshow-container").style.display='none';
  
 // loop through returned recipe objects
   for (var i = 0; i < recipes.length; i++) {
@@ -71,7 +55,7 @@ var displayRecipes = function () {
     var recipeSrc = recipes[i].recipe.url;
     var ingredients = recipes[i].recipe.ingredientLines
     var healthLabels = recipes[i].recipe.healthLabels;
-
+    
     // create recipe card element
     var recipeEl = document.createElement("div");
     recipeEl.classList = "card recipe-card";

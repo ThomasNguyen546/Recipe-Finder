@@ -2,17 +2,30 @@ header {
     background-image: url("../assets/images/header-background.png");
     background-size: cover;
     max-width: 100%;
-    color: #36b398;
+    
     text-align: center;
     padding: 10px 0px 0px 0px;
 }
 
 .headerTitle {
+    font-size: 40px;
     padding: 50px 0px 0px 0px;
+    color: #36b398;
+    text-shadow:
+        -1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
 }
 
 .headerIntro {
     color: #30cfac;
+}
+
+body {
+    background-color: #d5f2eb;
+    background-image: url(..//assets/images/bodybackground2.png);
+    background-size: cover;
 }
 
 #searchCard {
@@ -24,10 +37,18 @@ header {
     max-width: 650px;
     padding: 15px;
     border-color: #63dbc1;
+    border-width: 2px;
     justify-content: center;
     background-color: #adffe5;
     margin: 20px auto;
-    color:  #36b398;
+    background-image: url(../assets/images/cardbackground.png);
+    background-size: cover;
+    color:  white;
+    text-shadow:
+        -1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
 }
 
 /* Slideshow container */
@@ -43,12 +64,12 @@ img {
 
 /* Slideshow fade in and out */
 .fade-in {
-    animation: fadeinout 7s linear 1 forwards;
+    animation: fadeinout 6s linear 1 forwards;
 }
 @keyframes fadeinout {
-    0% { opacity: 0;}
+    0% { opacity: 0.1;}
     50% { opacity:1;}
-    100% { opacity: 0;}
+    100% { opacity: 0.1;}
 }
     
 /* Caption text */
@@ -59,11 +80,35 @@ img {
     position: absolute;
     bottom: 8px;
     width: 100%;
+    text-align: left;
+}
+
+.btn-back {
+    background-color:#adffe5;
+    border-radius: 10px;
+    border-width: 5px;
+    border-color: #adffe5;
+    color: #36b398;
+    padding: 15px 32px;
     text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+  
+.initial-btn {
+    margin: auto;
+    border-color:#1d9191;
+    border-width: 2px;
+    background-color:#21b0b0;
 }
 
 .recipe-img {
     width: 20vw;
 }
 
-  
+.recipe-card {
+    background-image: none;
+}

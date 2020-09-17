@@ -103,3 +103,7 @@ img {
     border-width: 2px;
     background-color:#21b0b0;
 }
+
+.recipe-title {
+    text-align: center;
+}

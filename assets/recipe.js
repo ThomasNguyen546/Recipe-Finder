@@ -17,7 +17,8 @@ var recipesSubmitHandler = function(event) {
         
         recipeInputEl.value = "";
     } else {
-        alert("Please enter a valid search term.");
+      modalCont.innerHTML = "Please enter a valid search term.";
+      showModal(); 
     }
 };
 
@@ -36,11 +37,14 @@ var getRecipes = function(searchTerm) {
         displayRecipes();
       })
     } else {
-      alert("Error: " + response.statusText);
+      modalCont.innerHTML = "Error: " + response.statusText;
+      showModal();
     }
   })
   .catch(function(error) {
-    alert("Unable to connect to Edamam");
+    modalCont.innerHTML = "Unable to connect to Edamam"
+    showModal();
+
   });
 };
 
@@ -113,7 +117,8 @@ var storesSubmitHandler = function() {
         
         storeInputEl.value = "";
     } else {
-        alert("Please enter a valid ZIP code");
+      modalCont.innerHTML = "Please enter a valid ZIP code"
+      showModal();
     }
 };
 
@@ -130,12 +135,14 @@ var getStores = function(searchTerm) {
       displayStores();
       }) 
       } else {
-        alert("Error: " + response.statusText);
-      }
+        modalCont.innerHTML = "Error: " + response.statusText;
+        showModal();
+        }
     })
     .catch(function(error) {
-      alert("Unable to connect to Edamam");
-    });
+      modalCont.innerHTML = "Unable to connect to Edamam"
+      showModal();
+      });
   };
 
 // Display Nearby Grocery Stores
@@ -175,3 +182,28 @@ var displayStores = function () {
 
 storeBtnEl.addEventListener("click", storesSubmitHandler)
 recipeBtnEl.addEventListener("click", recipesSubmitHandler);
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the content for the modal
+var modalCont = document.getElementById("modal-content");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+function showModal() {
+    modal.style.display = "block";
+    modalCont.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+}

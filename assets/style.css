@@ -67,9 +67,9 @@ img {
     animation: fadeinout 6s linear 1 forwards;
 }
 @keyframes fadeinout {
-    0% { opacity: 0.1;}
+    0% { opacity: 0;}
     50% { opacity:1;}
-    100% { opacity: 0.1;}
+    100% { opacity: 0;}
 }
     
 /* Caption text */
@@ -106,18 +106,36 @@ img {
 }
 
 .recipe-image{
-    width: 20vw;
+    width: 60%;
+    padding: 10px;
 }
 
 .recipe-card {
+    padding: 10px;
     background-image: none;
+    background-color: gainsboro;
+    color: black;
+    text-shadow: none;
+    align-items: center;
 }
 
 .recipe-title {
     text-align: center;
+    color: #1d9191;
+    font-size: 40px;
 }
 
+.recipe-ingredients {
+    padding: 15px;
+}
 
+#search-term {
+    text-transform: capitalize;
+}
+
+#stores-container {
+    text-align: center;
+}
 
 /* The Modal (background) */
 .modal-container {
@@ -157,3 +175,8 @@ img {
     text-decoration: none;
     cursor: pointer;
   }
+
+#stores-container {
+    margin: 0 auto;
+    justify-content: center;
+}

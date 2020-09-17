@@ -15,10 +15,11 @@
     <Header>
         <h1 class="headerTitle">Recipe Roundup</h1>
         <div>
-            <a href="./index.html" class="btn-back">
-                Search For A New Recipe
+            <a href="./recipe-info.html" class="btn-back">
+                Search For A New Recipe and Grocery Store Nearby!
             </a>
         </div>
+        <br>
         <h5 class="headerIntro">Showing Recipe For: <span id="search-term"></h5>
     </Header>
 
@@ -29,11 +30,12 @@
                 <div class="card" id="searchCard">
                     <h2>Search For a Recipe:</h2>
                     <div class="input-group">
-                        <input class="input-group-field" type="text" id="searchRecipe">
+                        <input class="input-group-field" type="text" id="searchRecipe" placeholder="Enter Recipe">
                         <!-- Have to delete the submit-btn id for it to jump to second page, but I left it here just in case -->
-                        <a href="./recipe-info.html" class="button" value="Submit" id="recipes-btn" type="submit">
-                            Submit
-                        </a>
+                        
+                        <div class="input-group-button">
+                            <input type="submit" class="button" value="Submit" id="recipes-btn">
+                        </div>
                     </div>
                 </div>
                 <div id="recipe-container"></div>
@@ -56,7 +58,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="stores-container"></div>
+                <div id="stores-container" class="columns large-12 align-self-center"></div>
             </div>
         </div>
     </div>

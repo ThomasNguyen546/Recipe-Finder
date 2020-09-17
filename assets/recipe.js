@@ -46,8 +46,11 @@ var getRecipes = function(searchTerm) {
 
 // Display Recipes 
 var displayRecipes = function () {
+
+  recipeContainerEl.textContent = "";
+
   var recipes = JSON.parse(localStorage.getItem("recipes") );
- 
+
 // loop through returned recipe objects
   for (var i = 0; i < recipes.length; i++) {
 

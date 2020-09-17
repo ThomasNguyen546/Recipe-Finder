@@ -90,11 +90,11 @@ var displayRecipes = function () {
     // create Ingredients element
     var ingredientEl = document.createElement("p");
     ingredientEl.classList = "recipe-ingredients";
-    ingredientEl.innerHTML = "Ingredients: " + ingredients;
+    ingredientEl.innerHTML = 'Ingredients: ' + '<ul><li>' + ingredients.join("</li><li>"); + '</li></ul>';
 
     // create Health Labels element
     var healthLabelEl = document.createElement("p");
-    ingredientEl.classList = "recipe-health";
+    healthLabelEl.classList = "recipe-health";
     healthLabelEl.innerHTML = "**" + healthLabels;
   
     // append all inner elements to recipe card

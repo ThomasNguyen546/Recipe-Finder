@@ -106,16 +106,27 @@ img {
 }
 
 .recipe-image{
-    width: 20vw;
+    width: 60%;
 }
 
 .recipe-card {
     background-image: none;
+    align-items: center;
+    background-color: white;
+    text-shadow: none;
+    color: black;
 }
 
 .recipe-title {
     text-align: center;
+    text-decoration: underline;
+    color: #1d9191
 }
+
+.recipe-ingredients {
+    padding: 15px;
+}
+
 
 
 

@@ -149,10 +149,10 @@ img {
 }
 
 footer {
-    background-color: #36b398;
-    color: white;
+    background-color: none;
+    color: black;
     margin: 0;
-    padding: 20px;
+    padding: 5px;
     text-align: center;
 }
 

@@ -15,8 +15,8 @@
     <Header>
         <h1 class="headerTitle">Recipe Roundup</h1>
         <div>
-            <a href="./recipe-info.html" class="btn-back">
-                Search For A New Recipe and Grocery Store Nearby!
+            <a href="#store-form" class="btn-back">
+                Search For A Grocery Store Nearby!
             </a>
         </div>
         <br>
@@ -36,6 +36,9 @@
                             Submit
                         </button>
                     </form>
+                    <h5>Search History:</h5>
+                    <div id="search-history"></div>
+                    <button id="clear-btn" class="button input-group-button">Clear History</button>
                 </div>
                 <div id="recipe-container"></div>
             </div>
@@ -67,7 +70,12 @@
             <p id="modal-content"></p>
         </div>
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./assets/recipe.js"></script>
 </body>
+
+<footer>
+    <h5 id="team-credit">Brought to you by the Foodie Group❤︎<h5>
+</footer>
+
 </html>

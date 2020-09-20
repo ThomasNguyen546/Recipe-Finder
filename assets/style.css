@@ -25,7 +25,13 @@ header {
 body {
     background-color: #d5f2eb;
     background-image: url(..//assets/images/bodybackground2.png);
-    background-size: cover;
+    background-size: auto;
+}
+
+.button {
+    background-color:#36b398;
+    border-radius: 2px;
+    border: 2px solid #1d9191;
 }
 
 #searchCard {
@@ -132,7 +138,21 @@ img {
     text-transform: capitalize;
 }
 
+.historyBtn {
+    margin: 5px;
+    background-color:#adffe5;
+    color: #36b398;
+}
+
 #stores-container {
+    text-align: center;
+}
+
+footer {
+    background-color: #36b398;
+    color: white;
+    margin: 0;
+    padding: 20px;
     text-align: center;
 }
 

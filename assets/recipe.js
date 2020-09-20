@@ -5,6 +5,11 @@ var storeInputEl = document.getElementById("searchCity");
 var storeContainerEl = document.getElementById("stores-container");
 var storeBtnEl = document.getElementById("store-form");
 var recipeContainerEl = document.getElementById("recipe-container");
+var searchHistoryEl = document.getElementById("search-history");
+var clearBtn = document.getElementById("clear-btn");
+var historyBtn = document.querySelector(".historyBtn");
+
+var histories = JSON.parse(localStorage.getItem('history')) || [];
 
 // Recipe Search Form Handler
 var recipesSubmitHandler = function(event) {
@@ -13,6 +18,9 @@ var recipesSubmitHandler = function(event) {
     var searchTerm = recipeInputEl.value.trim();
     
     if (searchTerm) {
+        histories.push(searchTerm);
+        localStorage.setItem("history", JSON.stringify(histories));
+        renderHistory();
         getRecipes(searchTerm);
         
         recipeInputEl.value = "";
@@ -31,6 +39,7 @@ var getRecipes = function(searchTerm) {
   fetch(apiUrl).then(function(response) {
     if(response.ok) {
       response.json().then(function(data) {
+
         localStorage.setItem("recipes", JSON.stringify(data.hits));
         var resultsTerm = document.getElementById("search-term");
         resultsTerm.innerHTML = searchTerm;
@@ -74,7 +83,7 @@ var displayRecipes = function () {
 
     // create recipe Image element
     var recipeImg = document.createElement("img");
-    recipeImg.classList = "recipe-image"
+    recipeImg.id = "recipe-image"
     recipeImg.src = recipes[i].recipe.image;
 
     // create "view full recipe" link
@@ -103,7 +112,7 @@ var displayRecipes = function () {
     // append recipe card to document body
     recipeContainerEl.append(recipeEl);
   }
-}
+};
 
 // Grocery Store Search Form Handler
 var storesSubmitHandler = function() {
@@ -177,11 +186,37 @@ var displayStores = function () {
   }
 };
 
+var renderHistory = function() {
+ searchHistoryEl.innerHTML = "";
+ for (var i = 0; i < histories.length; i++) {
 
+   historyBtn = document.createElement("button");
+   historyBtn.classList = "button historyBtn";
+   historyBtn.innerHTML = histories[i];
+   
+   searchHistoryEl.append(historyBtn);
+   }
+}
 
+$(document).on('click','.historyBtn',function(){
+  var searchTerm= this.textContent;
+  getRecipes(searchTerm);
+
+});
+
+var clearHistory = function() {
+  searchHistoryEl.innerHTML = "";
+  histories = [];
+  localStorage.clear();
+
+}
+
+renderHistory();
 
 storeBtnEl.addEventListener("submit", storesSubmitHandler)
 recipeBtnEl.addEventListener("submit", recipesSubmitHandler);
+clearBtn.addEventListener("click", clearHistory);
+
 
 // Get the modal
 var modal = document.getElementById("myModal");

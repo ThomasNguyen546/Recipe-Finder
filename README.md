@@ -13,10 +13,32 @@
 
 ## Take a look and give it a try yourself!
 ---
-
 [Recipe-Roundup website](https://thomasnguyen546.github.io/Recipe-Finder/)
 
-![the Recipe Roundup homepage](./assets/images/recipeRoundup.jpg)
+## Screenshots of Deployed Application
+
+Homepage
+
+![](assets/images/homepage.png)
+
+
+
+Search Page
+
+![](assets/images/searchPage.png)
+
+
+
+Recipe Card
+
+![](assets/images/recipeCard.png)
+
+
+
+Location Area
+
+![](assets/images/searchLocation.png)
+
 
 ### Technologies Used
 ---

@@ -13,7 +13,7 @@ If you have something more specific in mind, such as, Katsu Chicken Curry, you c
 Along with searching for your favorite recipes, users will be able to enter in their zipcode and find grocery stores nearby to purchase necessary ingredients.
 
 ## Take a look and give it a try yourself!
----
+
 [Recipe-Roundup website](https://thomasnguyen546.github.io/Recipe-Finder/)
 
 ## Screenshots of Deployed Application
